@@ -1,11 +1,11 @@
-const dotenv = require('dotenv').config();
+
 const mongoose = require( "mongoose");
-dotenv.config({ path: "./config.env" })
+
 
 
 const connectDB =  async()=>{
     try {
-        const conn = await mongoose.connect(process.env.MONGO_URI)
+        const conn = await mongoose.connect("mongodb+srv://nithishkumar1446:VscJjS8oUBzXQJ6e@cluster0.8pcaohe.mongodb.net/Proshop?retryWrites=true&w=majority")
         console.log(`Mongoose connected with ${conn.connection.host}`)
     } catch (error) {
        console.log(`Error : ${error.message}`)
