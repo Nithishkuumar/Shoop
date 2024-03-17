@@ -13,6 +13,7 @@ const paymentrouter = require("./routes/bookingrouter")
 const bookingrouter = require("./routes/bookingrouter")
 const uploadrouter = require("./routes/uploadroutes")
 const cookieParser = require('cookie-parser')
+const bodyParser = require("body-parser"); 
 const port = process.env.PORT || 5000;
 
 connectDB(); // connecting to database
@@ -20,7 +21,9 @@ connectDB(); // connecting to database
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended:true}))
+app.use(bodyParser.json())
 app.use(cookieParser())
+
 
 // app.get('/',(req,res)=>{
 //     res.send("API is running")
