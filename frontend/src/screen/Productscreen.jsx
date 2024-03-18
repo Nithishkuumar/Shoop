@@ -78,7 +78,7 @@ const Productscreen = () => {
               <h3>{product.name}</h3>
           </ListGroupItem>
           <ListGroupItem>
-              <Rating value={dete.averageRating} text={dete.numRating} key={product._id}></Rating>
+              <Rating value={dete.review.rating} text={dete.review.comment} key={product._id}></Rating>
           </ListGroupItem>
           <ListGroupItem>
               Description : {product.description}
