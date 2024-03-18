@@ -29,6 +29,12 @@ app.use(cookieParser())
 //     res.send("API is running")
 // })
 
+app.use('/api/products/',productrouter)
+app.use('/api/users/',userrouter)
+app.use('/api/orders/',orderrouter)
+app.use('/api/checkout-session/',bookingrouter)
+app.use("/api/uploads",uploadrouter)
+
 const _dirname = path.resolve();
 app.use("/uploads",express.static(path.join(_dirname,"/uploads")))
 
@@ -58,11 +64,7 @@ if (process.env.NODE_ENV === 'production') {
     });
   } 
 
-app.use('/api/products/',productrouter)
-app.use('/api/users/',userrouter)
-app.use('/api/orders/',orderrouter)
-app.use('/api/checkout-session/',bookingrouter)
-app.use("/api/uploads",uploadrouter)
+
 
 
 
