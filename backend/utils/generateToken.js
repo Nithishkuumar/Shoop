@@ -2,7 +2,7 @@ const jwt = require("jsonwebtoken")
 const AppError = require("./appError")
 
 module.exports = (res,userId)=>{
-    const token = jwt.sign({userId},process.env.SECRET,{
+    const token = jwt.sign({userId},"nithish15003",{
     expiresIn:"30d"
 })
 
