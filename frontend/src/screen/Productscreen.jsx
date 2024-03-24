@@ -41,6 +41,7 @@ const Productscreen = () => {
     const products = {...mydata}
     // console.log(products);
     const {product}= products
+    const prod = {...product}
     console.log(product);
 
     const addtoCartHandler = ()=>{
@@ -78,7 +79,7 @@ const Productscreen = () => {
               <h3>{product.name}</h3>
           </ListGroupItem>
           <ListGroupItem>
-              <Rating value={dete.averageRating} text={dete.numRating} key={product._id}></Rating>
+              <Rating value={prod.averageRating}  text={prod.numRating} key={product._id}></Rating>
           </ListGroupItem>
           <ListGroupItem>
               Description : {product.description}
