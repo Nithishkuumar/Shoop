@@ -10,7 +10,7 @@ const User = require("../Models/usermodel");
 
     if(token){
         try {
-            const decodedToken = jwt.verify(token,process.env.SECRET);
+            const decodedToken = jwt.verify(token,"nithish15003");
             // console.log(decodedToken);
             req.user = await User.findById(decodedToken.userId).select("-password");
             // console.log(req.user);
